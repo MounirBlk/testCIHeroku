@@ -7,7 +7,7 @@ describe('Login test by rest API', () => {
             .post('/register')
             .send('')
             .set('Accept', 'application/json')
-            .expect(403, {
+            .expect(404, {
                 error: true,
                 message: "L'une ou plusieurs données obligatoire sont manquantes"
             }, done);
