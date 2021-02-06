@@ -8,7 +8,7 @@ on:
   #  branches: [ main ]
   pull_request:
     branches: [ main ]
-    
+
   # Try merging pull requests belonging to a workflow run.
   workflow_run:
     workflows:
@@ -29,7 +29,6 @@ on:
 jobs:
   deploy:
     if: github.event.review.state == 'approved' || !github.event.review
-    name: Test deploy
     runs-on: ubuntu-latest
 
     strategy:
@@ -43,6 +42,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install
-        run: npm install
+        run: npm ci
+      - name: build 
+        run: npm run build --if-present
       - name: test
-        run: npm run test
+        run: npm test
