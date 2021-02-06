@@ -27,7 +27,7 @@ on:
       - submitted
 
 jobs:
-  deploy:
+  test:
     if: github.event.review.state == 'approved' || !github.event.review
     runs-on: ubuntu-latest
 
