@@ -1,9 +1,9 @@
 const request = require('supertest');
 
-describe('Login test by rest API', () => {
+describe('Login test by rest API', async() => {
 
     // test permettant de tester si les variables sont bien rempli ou non
-    it('Login fail email/password undefined', (done) => {
+    it('Login fail email/password undefined', async(done) => {
         request('https://api-develop-ci.herokuapp.com')
             .post('/login')
             .send('email=&password=')
@@ -15,7 +15,7 @@ describe('Login test by rest API', () => {
     });
 
     // test permettant de tester si les variables sont bien conforme ou non
-    it('Login fail bad email', (done) => {
+    it('Login fail bad email', async(done) => {
         request('https://api-develop-ci.herokuapp.com')
             .post('/login')
             .send('email=unknown&password=unknown')
