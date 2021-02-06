@@ -1,7 +1,6 @@
 const request = require('supertest');
 
 describe('Login test by rest API', async() => {
-
     // test permettant de tester si les variables sont bien rempli ou non
     it('Login fail datas manquantes', async(done) => {
         request('https://api-develop-ci.herokuapp.com')
