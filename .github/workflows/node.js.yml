@@ -8,6 +8,23 @@ on:
   #  branches: [ main ]
   pull_request:
     branches: [ main ]
+    
+  # Try merging pull requests belonging to a workflow run.
+  workflow_run:
+    workflows:
+      - CI
+    types:
+      - completed
+
+  # Try merging pull requests belonging to a check suite.
+  check_suite:
+    types:
+      - completed
+
+  # Try merging a pull request when it is approved.
+  pull_request_review:
+    types:
+      - submitted
 
 jobs:
   deploy:
