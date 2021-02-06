@@ -3,7 +3,7 @@ const request = require('supertest');
 describe('Login test by rest API', () => {
     // test permettant de tester si les variables sont bien rempli ou non
     it('Login fail email/password undefined', (done) => {
-        request('https://dashboardmou.herokuapp.com')
+        request('https://api-test-ci.herokuapp.com')
             .post('/login')
             .send('email=&password=')
             .set('Accept', 'application/json')
@@ -14,7 +14,7 @@ describe('Login test by rest API', () => {
     });
     // test permettant de tester si les variables sont bien conforme ou non
     it('Login fail bad email', (done) => {
-        request('https://dashboardmou.herokuapp.com')
+        request('https://api-test-ci.herokuapp.com')
             .post('/login')
             .send('email=unknown&password=unknown')
             .set('Accept', 'application/json')

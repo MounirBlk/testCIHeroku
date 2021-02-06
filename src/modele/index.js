@@ -1,13 +1,11 @@
-const config = require('../../config');
-
 mysql = require('mysql'),
     bdd = mysql.createConnection({
         multipleStatements: true,
-        host: config.BDD_HOST | process.env.BDD_HOST, //
-        user: config.BDD_USER | process.env.BDD_USER, //
-        password: config.BDD_PASSWORD | process.env.BDD_PASSWORD, //
-        database: config.BDD_DATABASE | process.env.BDD_DATABASE, //
-        port: '3306'
+        host: process.env.BDD_HOST, //
+        user: process.env.BDD_USER, //
+        password: process.env.BDD_PASSWORD, //
+        database: process.env.BDD_DATABASE, //
+        port: 3306
     })
 
 bdd.connect((err) => {

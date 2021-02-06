@@ -2,8 +2,7 @@ const express = require('express'),
     index = require('../middleware/index'),
     bdd = require('../modele/index'),
     bcrypt = require('bcrypt'),
-    jwt = require('jsonwebtoken'),
-    config = require('../../config');
+    jwt = require('jsonwebtoken');
 //sendMail = require('../middleware/filter/sendMail')
 
 exports.login = (req, res) => {
@@ -33,7 +32,7 @@ exports.login = (req, res) => {
                                 exp: Math.floor(Date.now() / 1000) + (60 * 60) * 24 * 7, // 7 jours
                                 idUser: idUser,
                                 isAdmin: isAdmin,
-                            }, config.TOKEN | process.env.TOKEN)
+                            }, process.env.TOKEN)
 
                             toUpdate = {
                                 token: token,
