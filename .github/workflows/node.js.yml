@@ -17,9 +17,9 @@ on:
       - completed
 
   # Try merging pull requests belonging to a check suite.
-  check_suite:
-    types:
-      - completed
+  #check_suite:
+  #  types:
+  #    - completed
 
   # Try merging a pull request when it is approved.
   pull_request_review:
