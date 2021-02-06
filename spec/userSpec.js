@@ -19,7 +19,7 @@ describe('Login test by rest API', () => {
             .post('/login')
             .send('email=unknown&password=unknown')
             .set('Accept', 'application/json')
-            .expect(408, {
+            .expect(409, {
                 error: true,
                 message: "L'email n'est pas conforme"
             }, done);
