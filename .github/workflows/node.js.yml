@@ -8,7 +8,7 @@ on:
   #  branches: [ main ]
   pull_request:
     branches: [ main ]
-    
+
   # Try merging pull requests belonging to a workflow run.
   workflow_run:
     workflows:
@@ -27,9 +27,8 @@ on:
       - submitted
 
 jobs:
-  deploy:
+  test:
     if: github.event.review.state == 'approved' || !github.event.review
-    name: Test deploy
     runs-on: ubuntu-latest
 
     strategy:
