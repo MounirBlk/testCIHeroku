@@ -20,20 +20,20 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
-    #- name : Wait on tests
-    #  uses: lewagon/wait-on-check-action@v0.2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-        - name: Wait on tests
-          uses: lewagon/wait-on-check-action@master
-          with:
-            ref: ${{ github.ref }}
-            repo-token: ${{ secrets.GITHUB_TOKEN }}
-            wait-interval: 10
-            running-workflow-name: 'deploy' # HERE
+      - uses: actions/checkout@v2
+      #- name : Wait on tests
+      #  uses: lewagon/wait-on-check-action@v0.2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+          - name: Wait on tests
+            uses: lewagon/wait-on-check-action@v0.2
+            with:
+              ref: ${{ github.ref }}
+              repo-token: ${{ secrets.GITHUB_TOKEN }}
+              wait-interval: 10
+              running-workflow-name: 'deploy' # HERE
     - name: install
       run: npm install
     - name: test
