@@ -12,6 +12,7 @@ describe('Login test by rest API', () => {
                 message: "L'email/password est manquant"
             }, done);
     });
+
     // test permettant de tester si les variables sont bien conforme ou non
     it('Login fail bad email', (done) => {
         request('https://api-test-ci.herokuapp.com')
