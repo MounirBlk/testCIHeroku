@@ -24,7 +24,7 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
     - name: Wait on tests
-      uses: lewagon/wait-on-check-action@main
+      uses: lewagon/wait-on-check-action@master
       with:
         node-version: ${{ matrix.node-version }}
     - name: install
