@@ -1,7 +1,6 @@
 const express = require('express'),
-    index = require('../middleware/filter/index'),
+    index = require('../middleware/index'),
     bdd = require('../modele/index'),
-    avatar = require("../middleware/filter/avatar"),
     bcrypt = require('bcrypt')
 
 exports.register = async(req, res) => {
@@ -54,7 +53,7 @@ exports.register = async(req, res) => {
                     civilite: data.civilite.trim(),
                     adresse: index.exist(data.adresse) == false ? data.adresse = "" : index.textFormat(data.adresse) == false ? index.sendReturn(res, 409, { error: true, message: "Adresse non conforme" }) : data.adresse.trim(),
                     portable: index.exist(data.portable) == false ? "" : data.portable.trim(),
-                    avatar: avatar.getAvatar(true),
+                    avatar: '',
                     isAdmin: data.isAdmin === true || parseInt(data.isAdmin) === 1 ? parseInt(1) : parseInt(0)
                 };
                 bdd.query("INSERT INTO utilisateur SET ?", toInsert, (error, results) => {

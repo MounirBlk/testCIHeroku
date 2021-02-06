@@ -1,4 +1,4 @@
-const bdd = require('../../modele/index');
+const bdd = require('../modele/index');
 
 /**
  * Function qui fait un retour d'une donnée

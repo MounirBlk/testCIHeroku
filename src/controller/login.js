@@ -1,5 +1,5 @@
 const express = require('express'),
-    index = require('../middleware/filter/index'),
+    index = require('../middleware/index'),
     bdd = require('../modele/index'),
     bcrypt = require('bcrypt'),
     jwt = require('jsonwebtoken')
