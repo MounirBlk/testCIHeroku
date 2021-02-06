@@ -1,7 +1,6 @@
 const request = require('supertest');
 
 describe('Login test by rest API', () => {
-
     // test permettant de tester si les variables sont bien rempli ou non
     it('Login fail email/password undefined', (done) => {
         request('https://api-test-ci.herokuapp.com')
