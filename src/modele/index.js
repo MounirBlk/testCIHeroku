@@ -5,7 +5,7 @@ mysql = require('mysql'),
         user: process.env.BDD_USER, //
         password: process.env.BDD_PASSWORD, //
         database: process.env.BDD_DATABASE, //
-        port: 3306
+        port: 3306 //
     })
 
 bdd.connect((err) => {
