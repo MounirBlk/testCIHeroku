@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 app.post('/login', loginCtrl.login); //Login
 app.post('/register', userCtrl.register); //Inscription
 app.get('/users', userCtrl.getUtilisateurs); //recuperation des utilisateurs
-app.get('/user/:id', userCtrl.getUtilisateur); //recuperation l'utilisateur unique (user connecte)
+app.get('/user/:id', userCtrl.getUtilisateur); //recuperation l'utilisateur unique
 app.put('/user/:id', userCtrl.updateUtilisateur); // Update de l'utilisateur
 app.delete('/deleteUser/:id', userCtrl.deleteUtilisateur); //Supprimer l'utilisateur
 
