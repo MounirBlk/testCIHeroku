@@ -33,8 +33,7 @@ jobs:
               ref: ${{ github.ref }}
               repo-token: ${{ secrets.GITHUB_TOKEN }}
               wait-interval: 10
-              running-workflow-name: deploy # HERE
-              
+              running-workflow-name: deploy # HERE      
     - name: install
       run: npm install
     - name: test
