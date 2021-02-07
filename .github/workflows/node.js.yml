@@ -43,5 +43,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install
         run: npm install
+      - name: kill && start && status
+        run: pm2 kill && pm2 start main.js && pm2 status
       - name: test
         run: npm run test
+      - name: kill
+        run: pm2 kill
