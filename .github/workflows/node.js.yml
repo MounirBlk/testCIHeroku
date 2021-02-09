@@ -43,6 +43,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - uses: SFDigitalServices/wait-for-deployment-action@v1 
+        id: deployment 
+        with: 
+          token: ${{ github.token }} 
+          environment: Preview
       #- name: install pm2
       #  run: npm install -g pm2
       - name: install
