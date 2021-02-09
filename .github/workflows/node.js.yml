@@ -41,13 +41,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install pm2
-        run: npm install -g pm2
+      #- name: install pm2
+      #  run: npm install -g pm2
       - name: install
         run: npm install
-      - name: kill && start && status
-        run: pm2 kill && pm2 start main.js
+      #- name: kill && start && status
+      #  run: pm2 kill && pm2 start main.js
       - name: test
         run: npm run test
-      - name: kill
-        run: pm2 kill
+      #- name: kill
+      #  run: pm2 kill
