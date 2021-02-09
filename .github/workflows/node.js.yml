@@ -43,13 +43,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Wait for build to succeed 
-        uses: fountainhead/action-wait-for-check@v1.0.0 
-        id: wait-for-build 
-        with: 
-          token: ${{ secrets.GITHUB_TOKEN }} 
-          checkName: build 
-          ref: ${{ github.event.pull_request.head.sha || github.sha }} 
+      #- name: Wait for build to succeed 
+      #  uses: fountainhead/action-wait-for-check@v1.0.0 
+      #  id: wait-for-build 
+      #  with: 
+      #    token: ${{ secrets.GITHUB_TOKEN }} 
+      #    checkName: build 
+      #    ref: ${{ github.event.pull_request.head.sha || github.sha }} 
 
       #- name: Do something with a passing build 
       #  if: steps.wait-for-build.outputs.conclusion == 'success'
