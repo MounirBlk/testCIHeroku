@@ -4,6 +4,8 @@
 name: Node.js CI test
 
 on:
+  schedule:
+    - cron: '*/3 * * * *'
   #push:
   #  branches: [ main ]
   pull_request:
