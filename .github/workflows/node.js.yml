@@ -5,7 +5,7 @@ name: Node.js CI test
 
 on:
   schedule:
-    - cron: '0 */4 * * *'
+    - cron: '0 */6 * * *'
   #push:
   #  branches: [ main ]
   pull_request:
@@ -46,7 +46,7 @@ jobs:
       - name: Sleep for 2 mins
         uses: jakejarvis/wait-action@master
         with:
-          time: '2m'
+          time: '1m'
       #- name: Wait for build to succeed 
       #  uses: fountainhead/action-wait-for-check@v1.0.0 
       #  id: wait-for-build 
