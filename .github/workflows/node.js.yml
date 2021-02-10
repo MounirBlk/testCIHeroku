@@ -4,6 +4,8 @@
 name: Node.js CI test
 
 on:
+  schedule:
+    - cron: '0 */6 * * *'
   #push:
   #  branches: [ main ]
   pull_request:
@@ -41,6 +43,21 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      #- name: Wait for build to succeed 
+      #  uses: fountainhead/action-wait-for-check@v1.0.0 
+      #  id: wait-for-build 
+      #  with: 
+      #    token: ${{ secrets.GITHUB_TOKEN }} 
+      #    checkName: build 
+      #    ref: ${{ github.event.pull_request.head.sha || github.sha }} 
+
+      #- name: Do something with a passing build 
+      #  if: steps.wait-for-build.outputs.conclusion == 'success'
+      #- uses: SFDigitalServices/wait-for-deployment-action@v1 
+        #id: deployment 
+        #with: 
+          #github-token: ${{ github.token }} 
+          #environment: Preview
       - name: install pm2
         run: npm install -g pm2
       - name: install
