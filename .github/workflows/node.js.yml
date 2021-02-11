@@ -31,7 +31,7 @@ on:
 jobs:
   test:
     if: github.event.review.state == 'approved' || !github.event.review
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest, windows-latest, macos-latest]
 
     strategy:
       matrix:
@@ -43,7 +43,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Sleep for 2 mins
+      - name: Sleep for 1 mins
         uses: jakejarvis/wait-action@master
         with:
           time: '1m'
