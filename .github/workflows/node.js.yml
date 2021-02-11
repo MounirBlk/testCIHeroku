@@ -44,8 +44,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Sleep for 1 mins
-        uses: jakejarvis/wait-action@master
+      #- name: Sleep for 1 mins
+      #  uses: jakejarvis/wait-action@master
         with:
           time: '1m'
       #- name: Wait for build to succeed 
