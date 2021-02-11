@@ -46,8 +46,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       #- name: Sleep for 1 mins
       #  uses: jakejarvis/wait-action@master
-        with:
-          time: '1m'
+      #  with:
+      #    time: '1m'
       #- name: Wait for build to succeed 
       #  uses: fountainhead/action-wait-for-check@v1.0.0 
       #  id: wait-for-build 
