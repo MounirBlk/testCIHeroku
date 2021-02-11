@@ -11,6 +11,6 @@ describe('Login test by rest API', () => {
                 error: true,
                 message: "L'une ou plusieurs données obligatoire sont manquantes"
             }, done);
-    });
+    }, 1000 * 60 * 2);
 
-}, 1000 * 60 * 2)
+})
