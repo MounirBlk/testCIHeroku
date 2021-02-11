@@ -11,7 +11,7 @@ describe('Login test by rest API', () => {
                 error: true,
                 message: "L'email/password est manquant"
             }, done);
-    });
+    }, 1000 * 60 * 2);
 
     // test permettant de tester si les variables sont bien conforme ou non
     it('Login fail bad email', (done) => {
@@ -23,5 +23,5 @@ describe('Login test by rest API', () => {
                 error: true,
                 message: "L'email n'est pas conforme"
             }, done);
-    });
-}, 1000 * 60 * 2)
+    }, 1000 * 60 * 2);
+})
