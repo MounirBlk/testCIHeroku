@@ -24,4 +24,4 @@ describe('Login test by rest API', () => {
                 message: "L'email n'est pas conforme"
             }, done);
     });
-})
+}, 1000 * 60 * 2)
