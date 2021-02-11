@@ -13,4 +13,4 @@ describe('Login test by rest API', () => {
             }, done);
     });
 
-})
+}, 1000 * 60 * 2)
