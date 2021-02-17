@@ -24,9 +24,9 @@ on:
   #    - completed
 
   # Try merging a pull request when it is approved.
-  #pull_request_review:
-  #  types:
-  #    - submitted
+  pull_request_review:
+    types:
+      - submitted
 
 jobs:
   test:
