@@ -30,7 +30,7 @@ on:
 
 jobs:
   test:
-    if: github.event.review.state == 'approved' || !github.event.review
+    #if: github.event.review.state == 'approved' || !github.event.review
     runs-on: ${{ matrix.os }}
 
     strategy:
