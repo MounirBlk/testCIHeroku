@@ -24,13 +24,13 @@ on:
   #    - completed
 
   # Try merging a pull request when it is approved.
-  pull_request_review:
-    types:
-      - submitted
+  #pull_request_review:
+  #  types:
+  #    - submitted
 
 jobs:
   test:
-    #if: github.event.review.state == 'approved' || !github.event.review
+    if: github.event.review.state == 'approved' || !github.event.review
     runs-on: ${{ matrix.os }}
 
     strategy:
