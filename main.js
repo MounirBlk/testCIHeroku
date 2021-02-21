@@ -2,7 +2,7 @@ const express = require('express'),
     path = require('path'),
     bodyParser = require('body-parser'),
     cors = require('cors'),
-    /*-------------------------------------------------------- */
+    /*------------------------------------------------------- */
     app = express(),
     loginCtrl = require('./src/controller/login'),
     userCtrl = require('./src/controller/user'),
